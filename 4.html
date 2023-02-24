@@ -3,87 +3,95 @@
 <head>
     <title>BaekJoon</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
-    <ol>
-        <li><a href="1.html">HTML</a></li>
-        <li><a href="2.html">CSS</a></li>
-        <li><a href="3.html">JS</a></li>
-        <li><a href="4.html">BAEKJOON</a></li>
-    </ol>
 
-    <strong><u>C++</u></strong>
+    <div id="grid">
+        <div>
+            <ol>
+                <li><a href="1.html">HTML</a></li>
+                <li><a href="2.html">CSS</a></li>
+                <li><a href="3.html">JS</a></li>
+                <li><a href="4.html">BAEKJOON</a></li>
+            </ol>
+        </div>
+        <div id="article">
+            <strong><u>C++</u></strong>
 
-    책으로
-    알고리즘 검색 : 매개변수 탐색
-    strlen - const char* 타입.  헤더함수cstring
-    공백포함 문자열 입력받을시 getline
-    <br>
-    시간초과날때는 중앙부터 탐색을해보자
-    값의 위치를 출력할때는 pair로 주소 저장후 해보기
-    fill 배열 초기화하는 함수
-    <br>
-    <br>
-    <br>
-    연결리스트 : 배열과달리 a가 b를 가르키는 연결된 구조
-    임의의 원소를 변경/제거할때 배열보다 효과적
-    좀더 공부필요
+            책으로
+            알고리즘 검색 : 매개변수 탐색
+            strlen - const char* 타입.  헤더함수cstring
+            공백포함 문자열 입력받을시 getline
+            <br>
+            시간초과날때는 중앙부터 탐색을해보자
+            값의 위치를 출력할때는 pair로 주소 저장후 해보기
+            fill 배열 초기화하는 함수
+            <br>
+            <br>
+            <br>
+            연결리스트 : 배열과달리 a가 b를 가르키는 연결된 구조
+            임의의 원소를 변경/제거할때 배열보다 효과적
+            좀더 공부필요
+        
+            <br>
+            정렬
+            - 선택정렬O(N^2) : 최소값을 찾아 위치를 앞으로 옮기고 정렬
+            -버블정렬O(N^2) :  옆의 값과 비교하여 더작은숫자 이동 - 구현이 쉬우나 가장 비효율적임
+            -삽입정렬O(N^2): 필요할때만 각 숫자를 적절한 위치에 삽입함-구현이 어려움
+            -퀵정렬O(nlogn) : 특정한값(피벗)을 기준으로 큰 숫자와 작은숫자 교환하며 반으로나눔(분할정복) 최악의경우N^2
+            -병합정렬O(nlogn) : 일단 반으로 나누고 나중에 정렬, 기존데이터를 담을 추가 배열공간 필요하여 메모리활용이 비효율적
+            - sort() : sort(start,end,compare) /  stable sort (안정정렬)
+                vector 배열을 보다 사용하기 쉽게 개편한 자료구조
+                pair 한쌍의 데이터 처리 할수있도록하는 자료구조 
+            - 힙정렬O(nlogn) : 힙트리구조 이용(이진트리:모든 노드의 자식노드가 2개이하).  (추가공부필요)
+            - 계수정렬O(n) : 범위조건이있는경우에한해 크기를 기준으로 갯수세기
+            <br>
+            탐색
+            이분탐색logn : 반으로 계속 나누면서 특정값에 근접하여 찾음
+            <br>
+        
+        
+            스택stack : 입구와 출구가 하나 LIFO
+            큐Queue : 양옆이 뚫림. 들어온것이 먼저나가는 first in first out(FIFO) 
+            덱 deque : 양옆으로 맘대로 넣고뺄수있음
+        
+            BFS(breadth first search) 큐 - 거리측정
+            : 다차원배열에서 각 칸을 방문할때 너비를 우선으로 방문
+            DFS(Depth First Search) 스택 - 그래프, 트리
+            : 다차원 배열에서 각 칸을 방문할때 깊이를 우선으로 방문
+        
+            재귀 : 하나의 함수에서 자기자신을 다시 호출해 작업수행함
+            귀납적 사고** 어렵다
+        
+        
+        
+            에라토스테네스의 체O(nlog*log_n)  : 소수를 구할때 낮은수의 배수들을 제외시켜 시간복잡도를 낮춤
+        
+            재귀함수, 포인터, 벡터(최대,최소)
+        
+        
+            <br>
+        
+            증가함수	알고리즘
+            O(1)          	해시 테이블
+            O(log n)	이진 탐색
+            O(n)         	순차 탐색
+            O(n log n)	합병정렬, 퀵정렬
+            O(n2)	            버블, 선택, 삽입 정렬
+            O(n3)            	플로이드 와샬 알고리즘
+            O(2n)	             하노이탑
+        
+        
+            #include bits/stdc++.h
+            using namespace std;
+        
+            ios::sync_with_stdio(0);
+            cin.tie(0);
+        </div>
+    </div>
 
-    <br>
-    정렬
-    - 선택정렬O(N^2) : 최소값을 찾아 위치를 앞으로 옮기고 정렬
-    -버블정렬O(N^2) :  옆의 값과 비교하여 더작은숫자 이동 - 구현이 쉬우나 가장 비효율적임
-    -삽입정렬O(N^2): 필요할때만 각 숫자를 적절한 위치에 삽입함-구현이 어려움
-    -퀵정렬O(nlogn) : 특정한값(피벗)을 기준으로 큰 숫자와 작은숫자 교환하며 반으로나눔(분할정복) 최악의경우N^2
-    -병합정렬O(nlogn) : 일단 반으로 나누고 나중에 정렬, 기존데이터를 담을 추가 배열공간 필요하여 메모리활용이 비효율적
-    - sort() : sort(start,end,compare) /  stable sort (안정정렬)
-        vector 배열을 보다 사용하기 쉽게 개편한 자료구조
-        pair 한쌍의 데이터 처리 할수있도록하는 자료구조 
-    - 힙정렬O(nlogn) : 힙트리구조 이용(이진트리:모든 노드의 자식노드가 2개이하).  (추가공부필요)
-    - 계수정렬O(n) : 범위조건이있는경우에한해 크기를 기준으로 갯수세기
-    <br>
-    탐색
-    이분탐색logn : 반으로 계속 나누면서 특정값에 근접하여 찾음
-    <br>
-
-
-    스택stack : 입구와 출구가 하나 LIFO
-    큐Queue : 양옆이 뚫림. 들어온것이 먼저나가는 first in first out(FIFO) 
-    덱 deque : 양옆으로 맘대로 넣고뺄수있음
-
-    BFS(breadth first search) 큐 - 거리측정
-    : 다차원배열에서 각 칸을 방문할때 너비를 우선으로 방문
-    DFS(Depth First Search) 스택 - 그래프, 트리
-    : 다차원 배열에서 각 칸을 방문할때 깊이를 우선으로 방문
-
-    재귀 : 하나의 함수에서 자기자신을 다시 호출해 작업수행함
-    귀납적 사고** 어렵다
-
-
-
-    에라토스테네스의 체O(nlog*log_n)  : 소수를 구할때 낮은수의 배수들을 제외시켜 시간복잡도를 낮춤
-
-    재귀함수, 포인터, 벡터(최대,최소)
-
-
-    <br>
-
-    증가함수	알고리즘
-    O(1)          	해시 테이블
-    O(log n)	이진 탐색
-    O(n)         	순차 탐색
-    O(n log n)	합병정렬, 퀵정렬
-    O(n2)	            버블, 선택, 삽입 정렬
-    O(n3)            	플로이드 와샬 알고리즘
-    O(2n)	             하노이탑
-
-
-    #include bits/stdc++.h
-    using namespace std;
-
-    ios::sync_with_stdio(0);
-    cin.tie(0);
 </body>
 </html>
